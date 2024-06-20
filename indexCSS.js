@@ -178,13 +178,11 @@ app.post('/events', (req, res) => {
       console.error("Error querying events table:", error1);
       return res.status(500).send("Internal Server Error");
     }
-    // console.log("Results:", results1); // Log results to verify data
 
-    // Check if records exist and render the view accordingly
     if (results1 && results1.length > 0) {
       res.render('events', { records: results1 });
     } else {
-      res.render('events', { records: [] }); // Render with empty records array
+      res.render('events', { records: [] });
     }
   });
 });
@@ -196,9 +194,7 @@ app.post('/achieve', (req, res) => {
       
       return res.status(500).send("Internal Server Error");
     }
-    console.log("Results:", results1.event_name); // Log results to verify data
-
-    // Check if records exist and render the view accordingly
+    console.log("Results:", results1.event_name); 
     res.render('achieve',{ name : results1});
   });
 });
